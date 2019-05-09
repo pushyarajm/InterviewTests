@@ -2,8 +2,11 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
+// Pushyaraj - Updated to lambda expressions to simplify the code logic
 namespace Graduation.Repository
 {
+    using System.Collections;
+    using System.Linq;
     using Graduation.Models;
 
     /// <summary>
@@ -18,18 +21,13 @@ namespace Graduation.Repository
         /// <returns>Student Model</returns>
         public static Student GetStudent(int id)
         {
-            Student student = null;
             var students = GetStudents();
 
-            for (int i = 0; i < students.Length; i++)
-            {
-                if (id == students[i].Id)
-                {
-                    student = students[i];
-                }
-            }
+            var student = students.Where(x => x.Id == id);
 
-            return student;
+            // If no student returned return null
+            var rtn = (student.Count() == 0) ? null : student.ToList()[0];
+            return rtn;
         }
 
         /// <summary>
@@ -40,17 +38,12 @@ namespace Graduation.Repository
         public static Diploma GetDiploma(int id)
         {
             var diplomas = GetDiplomas();
-            Diploma diploma = null;
 
-            for (int i = 0; i < diplomas.Length; i++)
-            {
-                if (id == diplomas[i].Id)
-                {
-                    diploma = diplomas[i];
-                }
-            }
+            var diploma = diplomas.Where(x => x.Id == id);
 
-            return diploma;
+            // If no diploma details returned return null
+            var rtn = (diploma.Count() == 0) ? null : diploma.ToList()[0];
+            return rtn;
         }
 
         /// <summary>
@@ -61,23 +54,16 @@ namespace Graduation.Repository
         public static Requirement GetRequirement(int id)
         {
             var requirements = GetRequirements();
-            Requirement requirement = null;
+            var requirement = requirements.Where(x => x.Id == id);
 
-            for (int i = 0; i < requirements.Length; i++)
-            {
-                if (id == requirements[i].Id)
-                {
-                    requirement = requirements[i];
-                }
-            }
-
-            return requirement;
+            // If no requirement details returned return null
+            var rtn = (requirement.Count() == 0) ? null : requirement.ToList()[0];
+            return rtn;
         }
 
         /// <summary>
         /// Reterive specific Requirement info from requirement repo
         /// </summary>
-        /// <param name="id">Identify</param>
         /// <returns>Requirement Model</returns>
         private static Diploma[] GetDiplomas()
         {
@@ -87,7 +73,7 @@ namespace Graduation.Repository
                 {
                     Id = 1,
                     Credits = 4,
-                    Requirements = new int[]{100,102,103,104}
+                    Requirements = new int[] { 100, 102, 103, 104 }
                 }
             };
         }
@@ -96,14 +82,14 @@ namespace Graduation.Repository
         /// Get All Requirements from database
         /// </summary>
         /// <returns>Requirement list</returns>
-        public static Requirement[] GetRequirements()
+        private static Requirement[] GetRequirements()
         {
                 return new[]
                 {
-                    new Requirement{Id = 100, Name = "Math", MinimumMark=50, Courses = new int[]{1}, Credits=1 },
-                    new Requirement{Id = 102, Name = "Science", MinimumMark=50, Courses = new int[]{2}, Credits=1 },
-                    new Requirement{Id = 103, Name = "Literature", MinimumMark=50, Courses = new int[]{3}, Credits=1},
-                    new Requirement{Id = 104, Name = "Physichal Education", MinimumMark=50, Courses = new int[]{4}, Credits=1 }
+                    new Requirement { Id = 100, Name = "Math", MinimumMark = 50, Courses = new int[] { 1 }, Credits = 1 },
+                    new Requirement { Id = 102, Name = "Science", MinimumMark = 50, Courses = new int[] { 2 }, Credits = 1 },
+                    new Requirement { Id = 103, Name = "Literature", MinimumMark = 50, Courses = new int[] { 3 }, Credits = 1 },
+                    new Requirement { Id = 104, Name = "Physichal Education", MinimumMark = 50, Courses = new int[] { 4 }, Credits = 1 }
                 };
         }
 
@@ -120,10 +106,10 @@ namespace Graduation.Repository
                    Id = 1,
                    Courses = new Course[]
                    {
-                        new Course{Id = 1, Name = "Math", Mark=95 },
-                        new Course{Id = 2, Name = "Science", Mark=95 },
-                        new Course{Id = 3, Name = "Literature", Mark=95 },
-                        new Course{Id = 4, Name = "Physichal Education", Mark=95 }
+                        new Course { Id = 1, Name = "Math", Mark = 95 },
+                        new Course { Id = 2, Name = "Science", Mark = 95 },
+                        new Course { Id = 3, Name = "Literature", Mark = 95 },
+                        new Course { Id = 4, Name = "Physichal Education", Mark = 95 }
                    }
                },
                new Student
@@ -131,10 +117,10 @@ namespace Graduation.Repository
                    Id = 2,
                    Courses = new Course[]
                    {
-                        new Course{Id = 1, Name = "Math", Mark=80 },
-                        new Course{Id = 2, Name = "Science", Mark=80 },
-                        new Course{Id = 3, Name = "Literature", Mark=80 },
-                        new Course{Id = 4, Name = "Physichal Education", Mark=80 }
+                        new Course { Id = 1, Name = "Math", Mark = 80 },
+                        new Course { Id = 2, Name = "Science", Mark = 80 },
+                        new Course { Id = 3, Name = "Literature", Mark = 80 },
+                        new Course { Id = 4, Name = "Physichal Education", Mark = 80 }
                    }
                },
             new Student
@@ -142,10 +128,10 @@ namespace Graduation.Repository
                 Id = 3,
                 Courses = new Course[]
                 {
-                    new Course{Id = 1, Name = "Math", Mark=50 },
-                    new Course{Id = 2, Name = "Science", Mark=50 },
-                    new Course{Id = 3, Name = "Literature", Mark=50 },
-                    new Course{Id = 4, Name = "Physichal Education", Mark=50 }
+                    new Course { Id = 1, Name = "Math", Mark = 50 },
+                    new Course { Id = 2, Name = "Science", Mark = 50 },
+                    new Course { Id = 3, Name = "Literature", Mark = 50 },
+                    new Course { Id = 4, Name = "Physichal Education", Mark = 50 }
                 }
             },
             new Student
@@ -153,10 +139,10 @@ namespace Graduation.Repository
                 Id = 4,
                 Courses = new Course[]
                 {
-                    new Course{Id = 1, Name = "Math", Mark=40 },
-                    new Course{Id = 2, Name = "Science", Mark=40 },
-                    new Course{Id = 3, Name = "Literature", Mark=40 },
-                    new Course{Id = 4, Name = "Physichal Education", Mark=40 }
+                    new Course { Id = 1, Name = "Math", Mark = 40 },
+                    new Course { Id = 2, Name = "Science", Mark = 40 },
+                    new Course { Id = 3, Name = "Literature", Mark = 40 },
+                    new Course { Id = 4, Name = "Physichal Education", Mark = 40 }
                 }
             }
             };

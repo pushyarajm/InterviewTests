@@ -19,7 +19,7 @@ namespace Graduation.BAL
         /// </summary>
         /// <param name="student">Student info</param>
         /// <param name="diploma">Diploma info</param>
-        /// <returns>Tuple<bool, STANDING></returns>
+        /// <returns name = "Tuple(bool,STANDING)">Graduated or not</returns>
         public Tuple<bool, STANDING> HasGraduated(Student student, Diploma diploma)
         {
             try
@@ -48,18 +48,19 @@ namespace Graduation.BAL
             {
                 var credits = 0;
                 var average = 0;
-                for (int i = 0; i < diploma.Requirements.Length; i++)
-                {
-                    for (int j = 0; j < student.Courses.Length; j++)
-                    {
-                        var requirement = Repository.GetRequirement(diploma.Requirements[i]);
 
-                        for (int k = 0; k < requirement.Courses.Length; k++)
+                foreach (var d in diploma.Requirements)
+                {
+                    foreach (var s in student.Courses)
+                    {
+                        var requirement = Repository.GetRequirement(d);
+
+                        foreach (var req in requirement.Courses)
                         {
-                            if (requirement.Courses[k] == student.Courses[j].Id)
+                            if (req == s.Id)
                             {
-                                average += student.Courses[j].Mark;
-                                if (student.Courses[j].Mark > requirement.MinimumMark)
+                                average += s.Mark;
+                                if (s.Mark > requirement.MinimumMark)
                                 {
                                     credits += requirement.Credits;
                                 }

@@ -12,6 +12,9 @@ namespace GraduationTracker.Tests.Unit
     using Graduation.Utilities;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+    /// <summary>
+    /// Test Class with Test methods for Graduation Tracker
+    /// </summary>
     [TestClass]
     public class GraduationTrackerTests
     {
@@ -37,10 +40,10 @@ namespace GraduationTracker.Tests.Unit
                    Id = 1,
                    Courses = new Course[]
                    {
-                        new Course{Id = 1, Name = "Math", Mark = 95 },
-                        new Course{Id = 2, Name = "Science", Mark = 95 },
-                        new Course{Id = 3, Name = "Literature", Mark = 95 },
-                        new Course{Id = 4, Name = "Physichal Education", Mark = 95 }
+                        new Course { Id = 1, Name = "Math", Mark = 95 },
+                        new Course { Id = 2, Name = "Science", Mark = 95 },
+                        new Course { Id = 3, Name = "Literature", Mark = 95 },
+                        new Course { Id = 4, Name = "Physichal Education", Mark = 95 }
                    }
                }
             };
@@ -76,10 +79,10 @@ namespace GraduationTracker.Tests.Unit
                    Id = 1,
                    Courses = new Course[]
                    {
-                        new Course{Id = 1, Name = "Math", Mark = 0 },
-                        new Course{Id = 2, Name = "Science", Mark = 0 },
-                        new Course{Id = 3, Name = "Literature", Mark = 0 },
-                        new Course{Id = 4, Name = "Physichal Education", Mark = 0 }
+                        new Course { Id = 1, Name = "Math", Mark = 0 },
+                        new Course { Id = 2, Name = "Science", Mark = 0 },
+                        new Course { Id = 3, Name = "Literature", Mark = 0 },
+                        new Course { Id = 4, Name = "Physichal Education", Mark = 0 }
                    }
                }
             };
@@ -113,10 +116,10 @@ namespace GraduationTracker.Tests.Unit
                    Id = 1,
                    Courses = new Course[]
                    {
-                        new Course{Id = 1, Name = "Math", Mark = 95 },
-                        new Course{Id = 2, Name = "Science", Mark = 95 },
-                        new Course{Id = 3, Name = "Literature", Mark = 95 },
-                        new Course{Id = 4, Name = "Physichal Education", Mark = 95 }
+                        new Course { Id = 1, Name = "Math", Mark = 95 },
+                        new Course { Id = 2, Name = "Science", Mark = 95 },
+                        new Course { Id = 3, Name = "Literature", Mark = 95 },
+                        new Course { Id = 4, Name = "Physichal Education", Mark = 95 }
                    }
                },
                new Student
@@ -124,10 +127,10 @@ namespace GraduationTracker.Tests.Unit
                    Id = 2,
                    Courses = new Course[]
                    {
-                        new Course{Id = 1, Name = "Math", Mark = 80 },
-                        new Course{Id = 2, Name = "Science", Mark = 80 },
-                        new Course{Id = 3, Name = "Literature", Mark = 80 },
-                        new Course{Id = 4, Name = "Physichal Education", Mark = 80 }
+                        new Course { Id = 1, Name = "Math", Mark = 80 },
+                        new Course { Id = 2, Name = "Science", Mark = 80 },
+                        new Course { Id = 3, Name = "Literature", Mark = 80 },
+                        new Course { Id = 4, Name = "Physichal Education", Mark = 80 }
                    }
                },
             new Student
@@ -135,10 +138,10 @@ namespace GraduationTracker.Tests.Unit
                 Id = 3,
                 Courses = new Course[]
                 {
-                    new Course{Id = 1, Name = "Math", Mark = 50 },
-                    new Course{Id = 2, Name = "Science", Mark = 50 },
-                    new Course{Id = 3, Name = "Literature", Mark = 50 },
-                    new Course{Id = 4, Name = "Physichal Education", Mark = 50 }
+                    new Course { Id = 1, Name = "Math", Mark = 50 },
+                    new Course { Id = 2, Name = "Science", Mark = 50 },
+                    new Course { Id = 3, Name = "Literature", Mark = 50 },
+                    new Course { Id = 4, Name = "Physichal Education", Mark = 50 }
                 }
             },
             new Student
@@ -146,10 +149,10 @@ namespace GraduationTracker.Tests.Unit
                 Id = 4,
                 Courses = new Course[]
                 {
-                    new Course{Id = 1, Name = "Math", Mark = 40 },
-                    new Course{Id = 2, Name = "Science", Mark = 40 },
-                    new Course{Id = 3, Name = "Literature", Mark = 40 },
-                    new Course{Id = 4, Name = "Physichal Education", Mark = 40 }
+                    new Course { Id = 1, Name = "Math", Mark = 40 },
+                    new Course { Id = 2, Name = "Science", Mark = 40 },
+                    new Course { Id = 3, Name = "Literature", Mark = 40 },
+                    new Course { Id = 4, Name = "Physichal Education", Mark = 40 }
                 }
             }
         };
@@ -163,6 +166,7 @@ namespace GraduationTracker.Tests.Unit
                 {
                     isGraduated = true;
                 }
+
                 Assert.IsTrue(isGraduated);
             }
         }
@@ -189,10 +193,10 @@ namespace GraduationTracker.Tests.Unit
                    Id = 1,
                    Courses = new Course[]
                    {
-                        new Course{Id = 1, Name = "Math", Mark = 0 },
-                        new Course{Id = 2, Name = "Science", Mark = 0 },
-                        new Course{Id = 3, Name = "Literature", Mark = 0 },
-                        new Course{Id = 4, Name = "Physichal Education", Mark = 0 }
+                        new Course { Id = 1, Name = "Math", Mark = 0 },
+                        new Course { Id = 2, Name = "Science", Mark = 0 },
+                        new Course { Id = 3, Name = "Literature", Mark = 0 },
+                        new Course { Id = 4, Name = "Physichal Education", Mark = 0 }
                    }
                },
                new Student
@@ -200,10 +204,10 @@ namespace GraduationTracker.Tests.Unit
                    Id = 2,
                    Courses = new Course[]
                    {
-                        new Course{Id = 1, Name = "Math", Mark = 0 },
-                        new Course{Id = 2, Name = "Science", Mark = 0 },
-                        new Course{Id = 3, Name = "Literature", Mark = 0 },
-                        new Course{Id = 4, Name = "Physichal Education", Mark = 0 }
+                        new Course { Id = 1, Name = "Math", Mark = 0 },
+                        new Course { Id = 2, Name = "Science", Mark = 0 },
+                        new Course { Id = 3, Name = "Literature", Mark = 0 },
+                        new Course { Id = 4, Name = "Physichal Education", Mark = 0 }
                    }
                },
             new Student
@@ -211,10 +215,10 @@ namespace GraduationTracker.Tests.Unit
                 Id = 3,
                 Courses = new Course[]
                 {
-                    new Course{Id = 1, Name = "Math", Mark = 0 },
-                    new Course{Id = 2, Name = "Science", Mark = 0 },
-                    new Course{Id = 3, Name = "Literature", Mark = 0 },
-                    new Course{Id = 4, Name = "Physichal Education", Mark = 0 }
+                    new Course { Id = 1, Name = "Math", Mark = 0 },
+                    new Course { Id = 2, Name = "Science", Mark = 0 },
+                    new Course { Id = 3, Name = "Literature", Mark = 0 },
+                    new Course { Id = 4, Name = "Physichal Education", Mark = 0 }
                 }
             },
             new Student
@@ -222,10 +226,10 @@ namespace GraduationTracker.Tests.Unit
                 Id = 4,
                 Courses = new Course[]
                 {
-                    new Course{Id = 1, Name = "Math", Mark = 0 },
-                    new Course{Id = 2, Name = "Science", Mark = 0 },
-                    new Course{Id = 3, Name = "Literature", Mark = 0 },
-                    new Course{Id = 4, Name = "Physichal Education", Mark = 0 }
+                    new Course { Id = 1, Name = "Math", Mark = 0 },
+                    new Course { Id = 2, Name = "Science", Mark = 0 },
+                    new Course { Id = 3, Name = "Literature", Mark = 0 },
+                    new Course { Id = 4, Name = "Physichal Education", Mark = 0 }
                 }
             }
         };

@@ -9,11 +9,29 @@ namespace Graduation.Utilities
     /// </summary>
     public enum STANDING
     {
+        /// <summary>
+        /// None
+        /// </summary>
         None,
+
+        /// <summary>
+        /// SumaCumLaude
+        /// </summary>
         SumaCumLaude,
+
+        /// <summary>
+        /// MagnaCumLaude
+        /// </summary>
         MagnaCumLaude,
+
+        /// <summary>
+        /// Average
+        /// </summary>
         Average,
+
+        /// <summary>
+        /// Remedial
+        /// </summary>
         Remedial
     }
-
 }
